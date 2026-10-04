@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BusinessToolFinder UK helps sole traders and small businesses compare software for accounting, expenses, invoicing, contracts and more.">
+  <title>BusinessToolFinder UK — Find the right business software</title>
+
+  <style>
+    :root {
+      --navy: #10233f;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --green: #059669;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e5e7eb;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 5%;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #60a5fa;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #10233f, #1e40af);
+      color: white;
+      padding: 70px 5% 80px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 64px);
+      line-height: 1.05;
+      max-width: 850px;
+      margin: auto auto 20px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .finder {
+      background: white;
+      color: var(--text);
+      max-width: 850px;
+      margin: 35px auto 0;
+      padding: 25px;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+      text-align: left;
+    }
+
+    .finder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 14px;
+      align-items: end;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    select, button {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 10px;
+      font: inherit;
+    }
+
+    select {
+      border: 1px solid var(--border);
+      padding: 0 12px;
+      background: white;
+    }
+
+    button {
+      border: none;
+      padding: 0 22px;
+      cursor: pointer;
+      background: var(--blue);
+      color: white;
+      font-weight: 700;
+    }
+
+    button:hover {
+      background: var(--blue-dark);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    .results {
+      display: none;
+      margin-bottom: 60px;
+    }
+
+    .results.visible {
+      display: block;
+    }
+
+    .recommendation {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      margin-bottom: 16px;
+    }
+
+    .recommendation h3 {
+      margin-bottom: 6px;
+    }
+
+    .recommendation p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #ecfdf5;
+      color: #047857;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 9px;
+      font-weight: 700;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 7px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .trust {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    .trust h2 {
+      margin-bottom: 12px;
+    }
+
+    .trust p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #cbd5e1;
+      padding: 35px 5%;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    @media (max-width: 750px) {
+      .finder-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">BusinessToolFinder<span> UK</span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="badge">Built for UK sole traders & small businesses</div>
+
+    <h1>Find software that actually fits your business.</h1>
+
+    <p>
+      Compare business tools by what you actually need to accomplish —
+      not by endless lists of features you may never use.
+    </p>
+
+    <div class="finder">
+
+      <div class="finder-grid">
+
+        <div>
+          <label for="business">I am a...</label>
+          <select id="business">
+            <option value="sole-trader">Sole trader</option>
+            <option value="freelancer">Freelancer</option>
+            <option value="small-business">Small business owner</option>
+            <option value="contractor">Contractor</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="need">I need help with...</label>
+          <select id="need">
+            <option value="accounting">Accounting</option>
+            <option value="expenses">Expenses & receipts</option>
+            <option value="invoicing">Invoicing</option>
+            <option value="cashflow">Cash flow</option>
+            <option value="contracts">Contracts</option>
+          </select>
+        </div>
+
+        <div>
+          <button onclick="findTools()">Find my options</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<main>
+
+  <section id="results" class="results">
+
+    <div class="section-title">
+      <h2>Our starting recommendations</h2>
+      <p>These are starting points, not personalised financial advice.</p>
+    </div>
+
+    <div id="recommendations"></div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+      <h2>What we compare</h2>
+      <p>Useful categories for running a small business.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Accounting</h3>
+        <p>
+          Compare accounting and bookkeeping tools for different
+          business sizes and needs.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧾</div>
+        <h3>Expenses</h3>
+        <p>
+          Find ways to capture receipts, track expenses and reduce
+          manual administration.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💷</div>
+        <h3>Cash flow</h3>
+        <p>
+          Explore tools designed to help small businesses understand
+          incoming and outgoing money.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✍️</div>
+        <h3>Contracts</h3>
+        <p>
+          Compare tools for creating, sending and managing business
+          agreements.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📨</div>
+        <h3>Invoicing</h3>
+        <p>
+          Find software that can simplify invoicing and payment
+          administration.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>Automation</h3>
+        <p>
+          Discover ways to automate repetitive administrative work.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="trust">
+
+    <h2>How we make money</h2>
+
+    <p>
+      BusinessToolFinder UK may receive commission when you purchase
+      or sign up for some products through links on this website.
+      Where applicable, those relationships will be clearly disclosed.
+      Our recommendations should be based on usefulness and suitability,
+      not simply on commission.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="footer-inner">
+    © 2026 BusinessToolFinder UK · Affiliate disclosure · Privacy
+  </div>
+
+</footer>
+
+<script>
+
+  /*
+    IMPORTANT:
+    These are demonstration recommendations.
+
+    We will replace the placeholder URLs with verified affiliate
+    URLs only after the relevant affiliate programme approves us.
+  */
+
+  const tools = {
+
+    accounting: [
+      {
+        name: "Accounting software comparison",
+        description:
+          "Compare accounting options based on your business type, features and budget.",
+        tag: "Accounting",
+        url: "#"
+      }
+    ],
+
+    expenses: [
+      {
+        name: "Dext",
+        description:
+          "A tool worth investigating for receipt and expense management. Verify current pricing and suitability before choosing.",
+        tag: "Expenses & receipts",
+        url: "#"
+      }
+    ],
+
+    invoicing: [
+      {
+        name: "Invoicing software",
+        description:
+          "Compare invoicing tools based on ease of use, payment options and business size.",
+        tag: "Invoicing",
+        url: "#"
+      }
+    ],
+
+    cashflow: [
+      {
+        name: "Cash-flow management tools",
+        description:
+          "Compare tools designed to help small businesses monitor and understand cash flow.",
+        tag: "Cash flow",
+        url: "#"
+      }
+    ],
+
+    contracts: [
+      {
+        name: "Contract management tools",
+        description:
+          "Compare tools for creating, sending and managing business agreements.",
+        tag: "Contracts",
+        url: "#"
+      }
+    ]
+
+  };
+
+  function findTools() {
+
+    const need = document.getElementById("need").value;
+    const results = document.getElementById("results");
+    const container = document.getElementById("recommendations");
+
+    const recommendations = tools[need] || [];
+
+    container.innerHTML = recommendations.map(tool => `
+
+      <div class="recommendation">
+
+        <span class="tag">${tool.tag}</span>
+
+        <h3>${tool.name}</h3>
+
+        <p>${tool.description}</p>
+
+        <a class="cta"
+           href="${tool.url}"
+           onclick="trackClick('${tool.name}')">
+           View option
+        </a>
+
+      </div>
+
+    `).join("");
+
+    results.classList.add("visible");
+
+    results.scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }
+
+  function trackClick(tool) {
+
+    /*
+      Later connect this to analytics.
+
+      Example:
+      gtag('event', 'affiliate_click', {
+        tool_name: tool
+      });
+    */
+
+    console.log("Affiliate click:", tool);
+
+  }
+
+</script>
+
+</body>
+</html>
