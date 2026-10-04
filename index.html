@@ -1,583 +1,842 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="BusinessToolFinder UK helps small businesses find software for expenses, cash flow, compliance and business administration.">
-
-<title>BusinessToolFinder UK | Find the right business software</title>
-
-<style>
-:root{
-  --navy:#10233f;
-  --blue:#2563eb;
-  --blue2:#1d4ed8;
-  --green:#059669;
-  --bg:#f6f8fb;
-  --white:#fff;
-  --text:#172033;
-  --muted:#667085;
-  --border:#e5e7eb;
-  --radius:16px;
+<!DOCTYPE html> <html lang="en-GB"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>BusinessToolFinder UK | Find the right business software</title> <meta name="description" content="BusinessToolFinder UK helps UK sole traders, freelancers and small businesses discover software for accounting, expenses, invoicing, cash flow and compliance."> <meta name="robots" content="index, follow"> <meta name="theme-color" content="#10233f"> <style> :root{ --navy:#10233f; --navy-light:#17345d; --blue:#2563eb; --blue-dark:#1d4ed8; --green:#059669; --green-bg:#ecfdf5; --bg:#f6f8fb; --white:#fff; --text:#172033; --muted:#667085; --border:#e5e7eb; --light-blue:#eef4ff; --radius:16px; --shadow:0 10px 35px rgba(16,35,63,.08); }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+html{
+scroll-behavior:smooth;
+}
 
 body{
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
+font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
 }
 
-a{text-decoration:none;color:inherit}
+a{
+color:inherit;
+text-decoration:none;
+}
+
+button,
+select{
+font:inherit;
+}
+
+.container{
+width:min(1100px,90%);
+margin:auto;
+}
+
+/* HEADER */
 
 header{
-  background:var(--navy);
-  color:white;
-  padding:18px 5%;
+background:var(--navy);
+color:white;
+padding:18px 0;
 }
 
 .nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+width:min(1100px,90%);
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
-  font-size:20px;
-  font-weight:800;
+font-size:20px;
+font-weight:800;
 }
 
-.logo span{color:#60a5fa}
+.logo span{
+color:#60a5fa;
+}
+
+.nav-links{
+display:flex;
+gap:22px;
+font-size:14px;
+}
+
+.nav-links a{
+color:#dbeafe;
+}
+
+.nav-links a:hover{
+color:white;
+}
+
+/* HERO */
 
 .hero{
-  background:linear-gradient(135deg,#10233f,#1e40af);
-  color:white;
-  padding:65px 5% 75px;
+background:
+radial-gradient(circle at 80% 20%,rgba(96,165,250,.18),transparent 30%),
+linear-gradient(135deg,#10233f,#1e40af);
+color:white;
+padding:70px 0 80px;
 }
 
 .hero-inner{
-  max-width:1100px;
-  margin:auto;
-  text-align:center;
+text-align:center;
 }
 
 .badge{
-  display:inline-block;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.2);
-  padding:7px 13px;
-  border-radius:999px;
-  font-size:13px;
-  margin-bottom:20px;
+display:inline-block;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.2);
+padding:7px 13px;
+border-radius:999px;
+font-size:13px;
+margin-bottom:20px;
 }
 
 h1{
-  font-size:clamp(38px,7vw,64px);
-  line-height:1.05;
-  max-width:850px;
-  margin:0 auto 20px;
+font-size:clamp(38px,7vw,64px);
+line-height:1.04;
+letter-spacing:-1.7px;
+max-width:850px;
+margin:0 auto 20px;
 }
 
-.hero p{
-  max-width:700px;
-  margin:auto;
-  color:#dbeafe;
-  font-size:18px;
+.hero-text{
+max-width:720px;
+margin:auto;
+color:#dbeafe;
+font-size:18px;
 }
+
+/* FINDER */
 
 .finder{
-  background:white;
-  color:var(--text);
-  max-width:850px;
-  margin:35px auto 0;
-  padding:25px;
-  border-radius:var(--radius);
-  box-shadow:0 20px 60px rgba(0,0,0,.18);
-  text-align:left;
+background:white;
+color:var(--text);
+max-width:900px;
+margin:35px auto 0;
+padding:27px;
+border-radius:var(--radius);
+box-shadow:0 20px 60px rgba(0,0,0,.2);
+text-align:left;
+}
+
+.finder-heading{
+margin-bottom:18px;
+}
+
+.finder-heading strong{
+display:block;
+font-size:18px;
+}
+
+.finder-heading span{
+color:var(--muted);
+font-size:14px;
 }
 
 .finder-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr auto;
-  gap:14px;
-  align-items:end;
+display:grid;
+grid-template-columns:1fr 1fr auto;
+gap:14px;
+align-items:end;
 }
 
 label{
-  display:block;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:7px;
+display:block;
+font-size:13px;
+font-weight:700;
+margin-bottom:7px;
 }
 
-select,button{
-  width:100%;
-  min-height:48px;
-  border-radius:10px;
-  font:inherit;
+select,
+.find-button{
+width:100%;
+min-height:48px;
+border-radius:10px;
 }
 
 select{
-  border:1px solid var(--border);
-  padding:0 12px;
-  background:white;
+border:1px solid var(--border);
+padding:0 12px;
+background:white;
+color:var(--text);
 }
 
-button{
-  border:0;
-  padding:0 22px;
-  cursor:pointer;
-  background:var(--blue);
-  color:white;
-  font-weight:700;
+.find-button{
+border:0;
+padding:0 22px;
+cursor:pointer;
+background:var(--blue);
+color:white;
+font-weight:700;
+transition:.2s;
 }
 
-button:hover{background:var(--blue2)}
+.find-button:hover{
+background:var(--blue-dark);
+transform:translateY(-1px);
+}
+
+/* MAIN */
 
 main{
-  max-width:1100px;
-  margin:auto;
-  padding:55px 5%;
+padding:60px 0;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:30px;
+text-align:center;
+margin-bottom:30px;
 }
 
 .section-title h2{
-  font-size:32px;
-  margin-bottom:8px;
+font-size:32px;
+line-height:1.2;
+margin-bottom:8px;
 }
 
-.section-title p{color:var(--muted)}
+.section-title p{
+color:var(--muted);
+}
+
+/* RESULTS */
 
 .results{
-  display:none;
-  margin-bottom:65px;
+display:none;
+margin-bottom:70px;
 }
 
-.results.visible{display:block}
+.results.visible{
+display:block;
+}
+
+.result-message{
+background:var(--light-blue);
+color:#1d4ed8;
+border-radius:10px;
+padding:13px 15px;
+margin-bottom:18px;
+font-size:14px;
+}
 
 .recommendation{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:25px;
-  margin-bottom:16px;
+background:white;
+border:1px solid var(--border);
+border-radius:var(--radius);
+padding:25px;
+margin-bottom:16px;
+box-shadow:var(--shadow);
 }
 
-.recommendation h3{margin-bottom:6px}
+.recommendation h3{
+font-size:23px;
+margin-bottom:7px;
+}
 
 .recommendation p{
-  color:var(--muted);
-  margin-bottom:16px;
+color:var(--muted);
+margin-bottom:15px;
 }
 
 .tag{
-  display:inline-block;
-  background:#ecfdf5;
-  color:#047857;
-  border-radius:999px;
-  padding:5px 9px;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:12px;
+display:inline-block;
+background:var(--green-bg);
+color:#047857;
+border-radius:999px;
+padding:5px 9px;
+font-size:12px;
+font-weight:700;
+margin-bottom:12px;
+}
+
+.best-for{
+color:var(--muted);
+font-size:14px;
+margin-bottom:15px;
 }
 
 .cta{
-  display:inline-block;
-  background:var(--blue);
-  color:white;
-  padding:10px 16px;
-  border-radius:9px;
-  font-weight:700;
+display:inline-block;
+background:var(--blue);
+color:white;
+padding:11px 17px;
+border-radius:9px;
+font-weight:700;
+}
+
+.cta:hover{
+background:var(--blue-dark);
 }
 
 .secondary{
-  background:#eef4ff;
-  color:#1d4ed8;
-  margin-left:8px;
+background:var(--light-blue);
+color:var(--blue-dark);
+margin-left:8px;
 }
 
+.secondary:hover{
+background:#dbeafe;
+}
+
+.commercial-note{
+color:var(--muted);
+font-size:12px;
+margin-top:14px;
+}
+
+/* CARDS */
+
 .cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
 .card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
+background:white;
+border:1px solid var(--border);
+border-radius:var(--radius);
+padding:24px;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:var(--shadow);
 }
 
 .icon{
-  font-size:30px;
-  margin-bottom:12px;
+font-size:30px;
+margin-bottom:12px;
 }
 
-.card h3{margin-bottom:7px}
+.card h3{
+margin-bottom:7px;
+}
 
 .card p{
-  color:var(--muted);
-  font-size:15px;
+color:var(--muted);
+font-size:15px;
 }
 
+/* FEATURE */
+
 .feature{
-  background:#10233f;
-  color:white;
-  border-radius:var(--radius);
-  padding:35px;
-  margin-top:50px;
+background:var(--navy);
+color:white;
+border-radius:var(--radius);
+padding:35px;
+margin-top:50px;
+}
+
+.feature h2{
+line-height:1.3;
 }
 
 .feature p{
-  color:#cbd5e1;
-  margin-top:10px;
+color:#cbd5e1;
+margin-top:10px;
 }
 
-.trust{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:30px;
-  margin-top:30px;
+/* INFO */
+
+.info{
+background:white;
+border:1px solid var(--border);
+border-radius:var(--radius);
+padding:30px;
+margin-top:30px;
 }
 
-.trust h2{margin-bottom:12px}
-
-.trust p{
-  color:var(--muted);
-  font-size:14px;
+.info h2{
+margin-bottom:12px;
 }
+
+.info p{
+color:var(--muted);
+font-size:14px;
+margin-bottom:12px;
+}
+
+/* FAQ */
+
+.faq{
+margin-top:60px;
+}
+
+.faq-item{
+background:white;
+border:1px solid var(--border);
+border-radius:12px;
+margin-bottom:10px;
+overflow:hidden;
+}
+
+.faq-item summary{
+cursor:pointer;
+padding:18px;
+font-weight:700;
+}
+
+.faq-item p{
+padding:0 18px 18px;
+color:var(--muted);
+font-size:14px;
+}
+
+/* FOOTER */
 
 footer{
-  background:var(--navy);
-  color:#cbd5e1;
-  padding:35px 5%;
-  font-size:13px;
+background:var(--navy);
+color:#cbd5e1;
+padding:40px 0;
+font-size:13px;
 }
 
-.footer-inner{
-  max-width:1100px;
-  margin:auto;
+.footer-brand{
+color:white;
+font-size:17px;
+font-weight:800;
+margin-bottom:10px;
 }
+
+.footer-links{
+display:flex;
+flex-wrap:wrap;
+gap:17px;
+margin:18px 0;
+}
+
+.footer-links a:hover{
+color:white;
+}
+
+.footer-note{
+max-width:800px;
+color:#94a3b8;
+}
+
+/* MOBILE */
 
 @media(max-width:750px){
-  .finder-grid,.cards{
-    grid-template-columns:1fr;
-  }
 
-  h1{font-size:42px}
+.nav{
+flex-direction:column;
+align-items:flex-start;
+gap:12px;
+}
 
-  .secondary{
-    margin-left:0;
-    margin-top:8px;
-  }
+.nav-links{
+flex-wrap:wrap;
+gap:14px;
+}
+
+.finder-grid,
+.cards{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:42px;
+}
+
+.hero{
+padding-top:50px;
+}
+
+.secondary{
+margin-left:0;
+margin-top:8px;
+}
+
+.cta{
+display:block;
+text-align:center;
+}
 }
 </style>
-</head>
 
-<body>
+</head> <body> <header> <div class="nav">
+<a href="#" class="logo">
+  BusinessToolFinder<span> UK</span>
+</a>
 
-<header>
-  <div class="nav">
-    <div class="logo">BusinessToolFinder<span> UK</span></div>
-  </div>
-</header>
+<nav class="nav-links" aria-label="Main navigation">
+  <a href="#finder">Find software</a>
+  <a href="#categories">Categories</a>
+  <a href="#about">About</a>
+  <a href="#faq">FAQ</a>
+</nav>
 
-<section class="hero">
+</div> </header> <section class="hero"> <div class="container hero-inner">
+<div class="badge">
+  Software discovery for UK small businesses
+</div>
 
-  <div class="hero-inner">
+<h1>
+  Find the right software for your business.
+</h1>
 
-    <div class="badge">
-      Independent software discovery for UK small businesses
-    </div>
+<p class="hero-text">
+  Tell us what you're trying to solve and we'll point you toward
+  tools worth investigating — without making you compare hundreds
+  of products yourself.
+</p>
 
-    <h1>Find the right software for your business.</h1>
+<div class="finder" id="finder">
 
-    <p>
-      Tell us what you're trying to solve and we'll point you toward
-      tools worth investigating — without making you compare hundreds
-      of products yourself.
-    </p>
-
-    <div class="finder">
-
-      <div class="finder-grid">
-
-        <div>
-          <label for="business">I am a...</label>
-
-          <select id="business">
-            <option value="sole-trader">Sole trader</option>
-            <option value="freelancer">Freelancer</option>
-            <option value="small-business">Small business owner</option>
-            <option value="contractor">Contractor</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="need">I need help with...</label>
-
-          <select id="need">
-            <option value="expenses">Expenses & receipts</option>
-            <option value="cashflow">Cash flow</option>
-            <option value="compliance">Compliance</option>
-            <option value="accounting">Accounting</option>
-            <option value="invoicing">Invoicing</option>
-          </select>
-        </div>
-
-        <div>
-          <button onclick="findTools()">Find options</button>
-        </div>
-
-      </div>
-
-    </div>
-
+  <div class="finder-heading">
+    <strong>Find software for your business</strong>
+    <span>
+      Choose your business type and what you need help with.
+    </span>
   </div>
 
-</section>
+  <div class="finder-grid">
 
-<main>
+    <div>
+      <label for="business">I am a...</label>
 
-<section id="results" class="results">
-
-  <div class="section-title">
-    <h2>Our starting recommendations</h2>
-    <p>We recommend investigating these options based on your selection.</p>
-  </div>
-
-  <div id="recommendations"></div>
-
-</section>
-
-
-<section>
-
-  <div class="section-title">
-
-    <h2>What can we help with?</h2>
-
-    <p>
-      We're starting with practical problems that cost small businesses
-      time and money.
-    </p>
-
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🧾</div>
-      <h3>Expenses & receipts</h3>
-      <p>
-        Find tools that can help capture receipts and reduce manual
-        expense administration.
-      </p>
+      <select id="business">
+        <option value="sole-trader">Sole trader</option>
+        <option value="freelancer">Freelancer</option>
+        <option value="small-business">Small business owner</option>
+        <option value="contractor">Contractor</option>
+      </select>
     </div>
 
-    <div class="card">
-      <div class="icon">💷</div>
-      <h3>Cash flow</h3>
-      <p>
-        Discover tools designed to help business owners understand
-        their financial position.
-      </p>
+    <div>
+      <label for="need">I need help with...</label>
+
+      <select id="need">
+        <option value="expenses">Expenses & receipts</option>
+        <option value="cashflow">Cash flow</option>
+        <option value="compliance">Compliance</option>
+        <option value="accounting">Accounting</option>
+        <option value="invoicing">Invoicing</option>
+        <option value="automation">Automation</option>
+      </select>
     </div>
 
-    <div class="card">
-      <div class="icon">🛡️</div>
-      <h3>Compliance</h3>
-      <p>
-        Explore software designed to help businesses manage
-        documentation and compliance tasks.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📊</div>
-      <h3>Accounting</h3>
-      <p>
-        Compare accounting and financial-management options for
-        different types of businesses.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📨</div>
-      <h3>Invoicing</h3>
-      <p>
-        Find tools that can simplify invoices and payment
-        administration.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="icon">⚙️</div>
-      <h3>Automation</h3>
-      <p>
-        Discover software that can remove repetitive administrative
-        tasks.
-      </p>
+    <div>
+      <button
+        class="find-button"
+        type="button"
+        onclick="findTools()"
+      >
+        Find options
+      </button>
     </div>
 
   </div>
 
-</section>
+</div>
 
+</div> </section> <main> <div class="container"> <section id="results" class="results" aria-live="polite"> <div class="section-title">
+<h2>Your starting recommendations</h2>
 
-<section class="feature">
+<p id="resultIntro">
+  Here are some options worth investigating.
+</p>
 
-  <h2>We're building this around real business problems.</h2>
+</div> <div id="resultMessage" class="result-message"></div> <div id="recommendations"></div> </section> <section id="categories"> <div class="section-title">
+<h2>What can we help with?</h2>
 
+<p>
+  Practical software categories for UK businesses.
+</p>
+
+</div> <div class="cards">
+<article class="card">
+  <div class="icon">🧾</div>
+  <h3>Expenses & receipts</h3>
   <p>
-    BusinessToolFinder isn't intended to be another giant list of
-    software. We're testing whether focused recommendations can save
-    small-business owners time and help them choose tools with
-    confidence.
+    Find tools that can help capture receipts and reduce
+    manual expense administration.
   </p>
+</article>
 
-</section>
-
-
-<section class="trust">
-
-  <h2>How we make money</h2>
-
+<article class="card">
+  <div class="icon">💷</div>
+  <h3>Cash flow</h3>
   <p>
-    Some links on BusinessToolFinder may eventually be affiliate or
-    referral links. If you purchase or subscribe through an eligible
-    link, we may receive a commission at no additional cost to you.
-    Commercial relationships will be clearly disclosed.
+    Discover tools designed to help business owners
+    understand and manage cash flow.
   </p>
+</article>
 
-  <br>
-
+<article class="card">
+  <div class="icon">🛡️</div>
+  <h3>Compliance</h3>
   <p>
-    We do not claim that a product is the best simply because it pays
-    us more. Product information should always be checked with the
-    provider before making a purchase.
+    Explore software designed to help organise business
+    documentation and compliance tasks.
   </p>
+</article>
 
-</section>
+<article class="card">
+  <div class="icon">📊</div>
+  <h3>Accounting</h3>
+  <p>
+    Compare accounting and financial-management options
+    for different businesses.
+  </p>
+</article>
 
-</main>
+<article class="card">
+  <div class="icon">📨</div>
+  <h3>Invoicing</h3>
+  <p>
+    Find tools that can simplify invoices and payment
+    administration.
+  </p>
+</article>
 
+<article class="card">
+  <div class="icon">⚙️</div>
+  <h3>Automation</h3>
+  <p>
+    Discover software that can remove repetitive
+    administrative tasks.
+  </p>
+</article>
 
-<footer>
+</div> </section> <section class="feature" id="about"> <h2> We're building this around real business problems. </h2> <p> BusinessToolFinder isn't intended to be another giant list of software. The goal is to make software research quicker by focusing on the problems faced by sole traders, freelancers, contractors and small businesses. </p> </section> <section class="info"> <h2>How we make money</h2> <p> Some links on BusinessToolFinder may be affiliate or referral links. If you purchase or subscribe through an eligible link, we may receive a commission at no additional cost to you. </p> <p> Commercial relationships will be disclosed. An affiliate relationship does not automatically mean a product is the best option for every business. </p> <p> Software features, pricing and availability can change. Always check the provider's current information before making a purchase or business decision. </p> </section> <section class="faq" id="faq"> <div class="section-title">
+<h2>Frequently asked questions</h2>
 
-  <div class="footer-inner">
+<p>
+  A few things you should know before using the site.
+</p>
 
-    <strong>BusinessToolFinder UK</strong>
+</div> <details class="faq-item"> <summary>Does BusinessToolFinder sell software?</summary>
+<p>
+  No. We help visitors discover software and provide links
+  to providers. Purchases and subscriptions are handled by
+  the relevant provider.
+</p>
 
-    <br><br>
+</details> <details class="faq-item"> <summary>Do you receive commission?</summary>
+<p>
+  Some links may be affiliate or referral links. Where this
+  applies, we aim to make the commercial relationship clear.
+</p>
 
-    © 2026 BusinessToolFinder UK
+</details> <details class="faq-item"> <summary>Is this financial or accounting advice?</summary>
+<p>
+  No. BusinessToolFinder is a software-discovery website.
+  The information provided is general information and is not
+  financial, tax, legal or accounting advice.
+</p>
 
-    <br>
+</details> <details class="faq-item"> <summary>How should I choose business software?</summary>
+<p>
+  Consider price, features, integrations, ease of use,
+  customer support, contract terms and whether the product
+  actually meets your business requirements.
+</p>
 
-    Affiliate disclosure · Privacy · Contact
+</details> </section> <section class="info"> <h2>Privacy</h2> <p> This version of BusinessToolFinder does not require visitors to create an account or submit personal information to use the software finder. </p> <p> If analytics, advertising, contact forms or other services are added later, the site's privacy information should be updated accordingly. </p> </section> <section class="info"> <h2>Contact</h2> <p> For partnerships, corrections or general enquiries, replace the email address below with your real business email. </p> <p> <strong>Email:</strong> hello@yourdomain.co.uk </p> </section> </div> </main> <footer> <div class="container"> <div class="footer-brand"> BusinessToolFinder UK </div> <p> © 2026 BusinessToolFinder UK </p> <div class="footer-links"> <a href="#about">About</a> <a href="#categories">Categories</a> <a href="#faq">FAQ</a> <a href="#finder">Find software</a> </div> <p class="footer-note"> Some links on BusinessToolFinder may be affiliate or referral links. We may receive a commission from eligible purchases or subscriptions at no additional cost to you. </p> </div> </footer> <script>
+/*
+BUSINESS TOOL DATABASE
+IMPORTANT:
+The URLs below are currently provider/programme URLs.
 
-  </div>
+When you are accepted into an affiliate programme, replace
+the relevant URL with YOUR actual affiliate tracking URL.
 
-</footer>
-
-
-<script>
+Do not assume an ordinary provider URL will generate commission.
+*/
 
 const tools = {
 
-  expenses: [
+expenses: [
 
-    {
-      name:"Dext",
-      tag:"Expenses & receipts",
-      description:
-        "Dext is designed to automate bookkeeping workflows around receipts, invoices and financial documents. Its current affiliate programme advertises commission for qualifying new business customers.",
-      url:"https://dext.com/uk/affiliates"
-    }
+{
+  name:"Dext",
 
-  ],
+  tag:"Expenses & receipts",
 
-  cashflow: [
+  bestFor:
+    "Businesses wanting to reduce manual receipt and document processing.",
 
-    {
-      name:"CFO Pal",
-      tag:"Cash flow",
-      description:
-        "CFO Pal is a UK-focused financial management service offering cash-flow forecasting, financial reports, budget tracking and alerts for small businesses.",
-      url:"https://www.cfopal.co.uk/affiliates"
-    }
+  description:
+    "Dext is designed to help businesses capture receipts, invoices and financial documents and streamline bookkeeping workflows.",
 
-  ],
+  url:"https://dext.com/uk/affiliates"
+}
 
-  compliance: [
+],
+cashflow: [
 
-    {
-      name:"Complys",
-      tag:"Compliance",
-      description:
-        "Complys provides compliance tools for areas including RAMS, fire risk assessments, construction phase plans and asbestos management.",
-      url:"https://www.complys.co.uk/affiliate-programme"
-    }
+{
+  name:"CFO Pal",
 
-  ],
+  tag:"Cash flow",
 
-  accounting: [
+  bestFor:
+    "Small businesses looking for greater cash-flow visibility and forecasting.",
 
-    {
-      name:"Accounting software",
-      tag:"Accounting",
-      description:
-        "We're researching accounting platforms and will add verified comparisons rather than inventing rankings.",
-      url:"#"
-    }
+  description:
+    "CFO Pal focuses on financial management, reporting, forecasting, budget tracking and cash-flow visibility.",
 
-  ],
+  url:"https://www.cfopal.co.uk/affiliates"
+}
 
-  invoicing: [
+],
+compliance: [
 
-    {
-      name:"Invoicing software",
-      tag:"Invoicing",
-      description:
-        "We're researching invoicing platforms and will add verified comparisons as the site develops.",
-      url:"#"
-    }
+{
+  name:"Complys",
 
-  ]
+  tag:"Compliance",
+
+  bestFor:
+    "Businesses that need help organising operational compliance documentation.",
+
+  description:
+    "Complys provides digital tools for areas including RAMS, fire risk assessments, construction phase plans and asbestos management.",
+
+  url:"https://www.complys.co.uk/affiliate-programme"
+}
+
+],
+accounting: [
+
+{
+  name:"Accounting software",
+
+  tag:"Accounting",
+
+  bestFor:
+    "Businesses researching accounting software.",
+
+  description:
+    "We're researching accounting platforms and will add verified comparisons rather than inventing rankings.",
+
+  url:"#"
+}
+
+],
+invoicing: [
+
+{
+  name:"Invoicing software",
+
+  tag:"Invoicing",
+
+  bestFor:
+    "Businesses wanting to simplify invoices and payment administration.",
+
+  description:
+    "We're researching invoicing platforms and will add verified comparisons as the site develops.",
+
+  url:"#"
+}
+
+],
+automation: [
+
+{
+  name:"Business automation tools",
+
+  tag:"Automation",
+
+  bestFor:
+    "Businesses looking to reduce repetitive administration.",
+
+  description:
+    "We're researching automation platforms and will add verified options as the site develops.",
+
+  url:"#"
+}
+
+]
+};
+
+/*
+BUSINESS TYPE LABELS
+*/
+const businessLabels = {
+
+"sole-trader":"sole traders",
+
+"freelancer":"freelancers",
+
+"small-business":"small businesses",
+
+"contractor":"contractors"
 
 };
 
-
+/*
+FIND TOOLS
+*/
 function findTools(){
 
-  const need =
-    document.getElementById("need").value;
+const business =
+document.getElementById("business").value;
 
-  const results =
-    document.getElementById("results");
+const need =
+document.getElementById("need").value;
 
-  const container =
-    document.getElementById("recommendations");
+const results =
+document.getElementById("results");
 
-  const recommendations =
-    tools[need] || [];
+const container =
+document.getElementById("recommendations");
 
-  container.innerHTML =
-    recommendations.map(tool => `
+const resultIntro =
+document.getElementById("resultIntro");
 
-      <div class="recommendation">
+const resultMessage =
+document.getElementById("resultMessage");
+
+const recommendations =
+tools[need] || [];
+
+const businessLabel =
+businessLabels[business] || "businesses";
+
+resultIntro.textContent =
+"Starting options for " +
+businessLabel +
+" looking for help with " +
+getNeedName(need) +
+".";
+
+resultMessage.textContent =
+"These are starting points for your research. Always check current pricing, features and suitability with the provider.";
+
+if(!recommendations.length){
+
+container.innerHTML = `
+
+  <div class="recommendation">
+
+    <h3>
+      We're still researching this category
+    </h3>
+
+    <p>
+      We don't want to invent recommendations.
+      Verified options will be added as the directory develops.
+    </p>
+
+  </div>
+
+`;
+
+}else{
+container.innerHTML =
+  recommendations.map(tool => {
+
+    const isPlaceholder =
+      tool.url === "#";
+
+    return `
+
+      <article class="recommendation">
 
         <span class="tag">
           ${tool.tag}
@@ -587,43 +846,123 @@ function findTools(){
           ${tool.name}
         </h3>
 
+        <div class="best-for">
+          <strong>Best for:</strong>
+          ${tool.bestFor}
+        </div>
+
         <p>
           ${tool.description}
         </p>
 
-        <a
-          class="cta"
-          href="${tool.url}"
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          onclick="trackClick('${tool.name}')"
-        >
-          Investigate this option
-        </a>
+        ${
+          isPlaceholder
 
-      </div>
+          ?
 
-    `).join("");
+          `
+            <a
+              class="cta secondary"
+              href="#"
+              onclick="return false;"
+            >
+              Coming soon
+            </a>
+          `
 
-  results.classList.add("visible");
+          :
 
-  results.scrollIntoView({
-    behavior:"smooth"
-  });
+          `
+            <a
+              class="cta"
+              href="${tool.url}"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              onclick="trackClick('${escapeJS(tool.name)}')"
+            >
+              Investigate this option
+            </a>
+          `
+        }
+
+        <div class="commercial-note">
+
+          ${
+            isPlaceholder
+
+            ? "We're researching this category."
+
+            : "This may be a commercial or affiliate link."
+          }
+
+        </div>
+
+      </article>
+
+    `;
+
+  }).join("");
+
+}
+results.classList.add("visible");
+
+results.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
 
 }
 
+/*
+NEED LABEL
+*/
+function getNeedName(need){
+
+const names = {
+
+expenses:"expenses and receipts",
+
+cashflow:"cash flow",
+
+compliance:"compliance",
+
+accounting:"accounting",
+
+invoicing:"invoicing",
+
+automation:"automation"
+
+};
+return names[need] || "business software";
+
+}
+
+/*
+CLICK TRACKING
+Currently this simply records the click in the browser console.
+Later this can be connected to Google Analytics,
+Plausible, Matomo or another analytics platform.
+*/
 
 function trackClick(tool){
 
-  console.log(
-    "Outbound commercial click:",
-    tool
-  );
+console.log(
+"Outbound commercial click:",
+tool
+);
 
 }
 
-</script>
+/*
+JAVASCRIPT SAFETY
+*/
+function escapeJS(value){
 
-</body>
-</html>
+return String(value)
+.replace(/\/g,"\\")
+.replace(/ programmes. The next thing I'd work on is adding more real software'/g,"\'");
+
+}
+
+</script> </body> </html>
+
